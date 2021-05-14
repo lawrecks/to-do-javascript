@@ -96,7 +96,7 @@ function refresh(arr, updateTodo) {
 
   // Render HTML
   for (let todo of arr) {
-    todoList.innerHTML += `<div class="list-item" 
+    todoList.innerHTML += `<li class="list-item" 
                                     draggable="true" 
                                     ondragstart="dragTodo(event, ${todo.id})" 
                                     ondrop="dropTodo(event, ${todo.id})"
@@ -122,7 +122,7 @@ function refresh(arr, updateTodo) {
                                           todo.id
                                         })">
                                     </div>
-                                </div>`;
+                                </li>`;
   }
 
   // Update the number of active todos rendered
