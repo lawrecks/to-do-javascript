@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+    <link id="todoStyle" rel="stylesheet" href="styles/light.css">
+    <link rel="icon" href="images/favicon-32x32.png">
+</head>
+<body>
+    <div class="container">
+        <div class="banner">
+        </div>
+        <div class="to-do">
+            <div class="to-do-header">
+                <div class="text">
+                    <h4>TODO</h4>
+                </div>
+            </div>
+
+            <div class="to-do-body">
+                <form class="input-group" action="javascript:void(0)" onsubmit="addTodoItem()">
+                    <div class="prepend">
+                        <span><i class="prepend-logo"></i></span>
+                    </div>
+                    <input type="text" placeholder="Create a new todo..." id="todoInput">
+                </form>
+
+                <div class="to-do-list">
+                    <div id="todoList">
+                        
+                    </div>
+                    <div class="to-do-bottom">
+                        <div>
+                            <p id="itemsLeft"></p>
+                        </div>
+                        <div class="to-do-actions">
+                            <div class="to-do-tabs">
+                                <p class="active tab" onclick="showAllTodos(this)">All</p>
+                                <p class="tab" onclick="showActiveTodos(this)">Active</p>
+                                <p class="tab" onclick="showCompletedTodos(this)">Completed</p>
+                            </div>
+                            <div>
+                                <p onclick="clearCompletedTodos()">Clear Completed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="to-do-tabs-mobile">
+                    <p class="active tab-m" onclick="showAllTodos(this, 'mobile')">All</p>
+                    <p class="tab-m" onclick="showActiveTodos(this, 'mobile')">Active</p>
+                    <p class="tab-m" onclick="showCompletedTodos(this, 'mobile')">Completed</p>
+                </div>
+
+                <div class="to-do-footer">
+                    <p>Drag and drop to reorder list</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
