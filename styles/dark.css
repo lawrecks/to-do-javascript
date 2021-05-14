@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Josefin Sans";
+}
+body {
+    background-color: hsl(235, 21%, 11%);
+    font-size: 18px;
+}
+
+.banner {
+    background-image: url("../images/bg-desktop-dark.jpg");
+    width: 100%;
+    height: 37vh;
+}
+
+.to-do {
+    padding: 16px;
+    color: #fff;
+    width: 35%;
+    margin: auto;
+    height: 80vh;
+    margin-top: -220px;
+}
+
+.to-do-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.to-do-header h4 {
+    font-size: 35px;
+    font-weight: 700;
+    letter-spacing: 12px;
+}
+
+.toggle-theme img {
+    cursor: pointer;
+}
+
+.to-do-body {
+    margin-top: 40px;
+}
+
+.to-do-list {
+    margin-top: 20px;
+    border: 1px solid transparent;
+    background: hsl(235, 24%, 19%);
+    border-radius: 5px;
+}
+
+.input-group {
+    overflow: hidden;
+    display: flex;
+    background: hsl(235, 24%, 19%);
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.input-group input{
+    width: 92%;
+    border: none;
+    font-size: 18px;
+    color: hsl(234, 39%, 85%);
+    background: hsl(235, 24%, 19%);
+}
+::placeholder {
+    color: hsl(233, 14%, 35%);;
+}
+
+.input-group input:focus{
+    outline: none;
+}
+
+.input-group .prepend-logo::before {
+    content: '';
+    position: absolute;
+    margin-top: -2px;
+    width: 22px;
+    height: 22px;
+    border-radius: 14px;
+    border: 1px solid hsl(233, 14%, 35%);
+}
+
+.list-item {
+    border-bottom: 1px solid hsl(233, 14%, 35%);
+    border-radius: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.checkbox.checked input + label span{
+    text-decoration: line-through;
+    color: hsl(236, 9%, 61%);
+}
+
+.checkbox {
+    width: 100%;
+    position: relative;
+    display: block;
+}
+.checkbox label {
+    position: relative;
+    min-height: 21px;
+    display: block;
+    padding-left: 40px;
+    margin-bottom: 0;
+    font-weight: normal;
+    cursor: pointer;
+}
+.checkbox label span {
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+}
+.checkbox label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-top: -2px;
+    width: 22px;
+    height: 22px;
+    transition: transform 0.28s ease;
+    border-radius: 14px;
+    border: 1px solid hsl(233, 14%, 35%);
+    background: hsl(235, 24%, 19%);
+}
+
+.checkbox label:hover::before  {
+    border-radius:14px;
+    border:1px solid transparent;
+    background:linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    -webkit-mask:
+        linear-gradient(#fff 0 0) padding-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+}
+
+.checkbox.checked label:hover::before  {
+    -webkit-mask:unset;
+    -webkit-mask-composite: unset;
+}
+
+.checkbox label:after {
+    content: '';
+    display: block;
+    width: 7px;
+    height: 3px;
+    border-bottom: 2px solid #fff;
+    border-left: 2px solid #fff;
+    transform: rotate(-45deg) scale(0);
+    transition: transform ease 0.25s;
+    position: absolute;
+    top: 7px;
+    left: 7px;
+}
+.checkbox input[type="checkbox"] {
+    width: auto;
+    opacity: 0.00000001;
+    position: absolute;
+    left: 0;
+    margin-left: -20px;
+}
+.checkbox input[type="checkbox"]:checked ~ label:after {
+    transform: rotate(-45deg) scale(1);
+}
+
+.checkbox input[type="checkbox"]:checked + label span{
+    text-decoration: line-through;
+    color: hsl(233, 14%, 35%);
+}
+
+.checkbox input[type="checkbox"]:checked ~ label:before {
+    background: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+
+.checkbox.un-checked input + label span{
+    text-decoration: none;
+    color: hsl(234, 39%, 85%);
+}
+
+.delete-to-do {
+    display: none;
+    padding: 0;
+    width: 22px;
+    height: 21px;
+}
+
+.checkbox:hover + .delete-to-do {
+    display: block;
+    cursor: pointer;
+}
+
+.delete-to-do:hover {
+    display: block;
+    cursor: pointer;
+}
+
+.to-do-bottom {
+    padding: 16px 20px;
+    display: flex;
+    font-size: 14px;
+    justify-content: space-between;
+    color: hsl(236, 9%, 61%);
+    background: hsl(235, 24%, 19%);
+}
+
+.to-do-actions {
+    width: 65%;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+}
+
+.to-do-tabs {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.to-do-actions p:hover {
+    color: hsl(235, 19%, 35%);
+    cursor: pointer;
+}
+
+.to-do-actions .active {
+    color: hsl(220, 98%, 61%);
+}
+
+.to-do-footer {
+    text-align: center;
+    margin-top: 45px;
+    font-size: 14px;
+    font-weight: 700;
+    color: hsl(236, 9%, 61%);
+}
+
+.to-do-tabs-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 600px) and (min-width:374px) {
+    body {
+        font-size: 13px;
+    }
+    .to-do {
+        width: 88%;
+        margin-top: -150px;
+    }
+
+    .to-do-actions {
+        width: unset;
+    }
+
+    .to-do-tabs {
+        display: none;
+    }
+
+    .banner {
+        background-position: center;
+        height: 30vh;
+        background-size: 250%;
+        background-repeat: no-repeat;
+    }
+
+    .to-do-header h4 {
+        font-size: 26px;
+    }
+
+    .to-do-body {
+        margin-top: 30px;
+    }
+
+    .input-group .prepend-logo::before, .checkbox label:before {
+        width: 19px;
+        height: 19px;
+    }
+
+    .input-group {
+        padding: 12px;
+    }
+
+    .input-group input {
+        width: 86%;
+    }
+
+    .toggle-theme img{
+        width: 20px;
+        height: 20px;
+    }
+    
+    ::placeholder {
+        font-size: 13px;
+    }
+
+    .list-item {
+        padding: 12px;
+    }
+
+    .to-do-list {
+        margin-top: 15px;
+    }
+
+    .to-do-tabs-mobile {
+        margin-top: 10px;
+        display: flex;
+        background: hsl(235, 24%, 19%);
+        justify-content: space-evenly;
+        padding: 12px;
+        border-radius: 5px;
+        color: hsl(236, 9%, 61%);
+    }
+
+    .to-do-footer {
+        font-size: 13px;
+    }
+
+    .to-do-tabs-mobile .active {
+        color: hsl(220, 98%, 61%);
+    }
+
+    .to-do-actions {
+        font-size: 13px;
+    }
+
+    .checkbox label:after {
+        top: 5px;
+        left: 5px;
+    }
+}
