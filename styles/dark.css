@@ -13,12 +13,14 @@ body {
   background-image: url("../images/bg-desktop-dark.jpg");
   width: 100%;
   height: 37vh;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .to-do {
   padding: 16px;
   color: #fff;
-  width: 35%;
+  width: 550px;
   margin: auto;
   height: 80vh;
   margin-top: -220px;
